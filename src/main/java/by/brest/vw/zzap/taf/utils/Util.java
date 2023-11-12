@@ -1,5 +1,4 @@
 package by.brest.vw.zzap.taf.utils;
-
 import java.security.SecureRandom;
 import java.util.Random;
 
@@ -32,23 +31,6 @@ public class Util {
             password.append(randomCharacter);
         }
         return password.toString();
-    }
-    public static String generatePartNumber() {
-        Random random = new SecureRandom();
-        final String letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        final String digits = "0123456789";
-        //final String specialCharacters = "!@#$%&*";
-        final String allCharacters = letters + digits;
-
-        int length = random.nextInt(9) + 8;
-        StringBuilder partNumber = new StringBuilder(length);
-
-        for (int i = 0; i < length; i++) {
-            int randomIndex = random.nextInt(allCharacters.length());
-            char randomCharacter = allCharacters.charAt(randomIndex);
-            partNumber.append(randomCharacter);
-        }
-        return partNumber.toString();
     }
 }
 
