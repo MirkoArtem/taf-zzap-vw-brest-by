@@ -1,5 +1,4 @@
 package by.brest.vw.zzap.taf.ui;
-
 import by.brest.vw.zzap.taf.po.HomePage;
 import by.brest.vw.zzap.taf.po.LoginPage;
 import by.brest.vw.zzap.taf.utils.Util;
@@ -28,5 +27,17 @@ public class LoginPageTest extends BaseTest {
         loginPage.typePasswordInput(Util.generatePassword());
         loginPage.clickLoginButton();
         Assertions.assertEquals("Неверный логин/пароль!", loginPage.getErrorMessageText());
+    }
+    @Test
+    public void testLoginWithCorrectEmailAndPassword(){
+        HomePage homePage = new HomePage(driver);
+        homePage.clickLoginButton();
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.typeNickNameInput("aikmir64@gmail.com");
+        loginPage.typePasswordInput("QAZwsx123");
+        loginPage.clickLoginButton();
+        String expectedResult = "Мирко Артём";
+        String actualResult = loginPage.getClientName();
+        Assertions.assertEquals(expectedResult, actualResult);
     }
 }

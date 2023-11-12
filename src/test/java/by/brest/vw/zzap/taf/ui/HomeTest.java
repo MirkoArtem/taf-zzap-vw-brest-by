@@ -1,5 +1,4 @@
 package by.brest.vw.zzap.taf.ui;
-
 import by.brest.vw.zzap.taf.po.HomePage;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
